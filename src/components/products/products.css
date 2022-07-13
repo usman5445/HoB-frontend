@@ -1,0 +1,69 @@
+.headers {
+    text-align: center;
+}
+
+#resultsForhead{
+    font-size: 2em;
+    font-weight: bold;
+}
+#collectionHead{
+    font-size: 1.3rem;
+}
+
+.productsFilter{
+    padding: 0 5rem;
+    /* max-width: 120rem; */
+   
+}
+
+#fliter,#slider{
+    display: inline-block;
+    padding: 0 0.5rem;
+}
+#box{
+    background-color: rgb(167, 156, 156);
+    height: 20px;
+    width: 20px;
+    float: right;
+}
+.row{
+    padding: 2rem 5rem;
+}
+.col{
+    border: 1px solid black;
+    color: white;
+    background-color: blueviolet;
+}
+
+.collectionName{
+    color: #B4B4B4;
+}
+
+.productPrice{
+    font-weight: 700;
+}
+
+.card{
+    margin-top: 1rem;
+    border: none !important;
+}
+@media only screen and (max-width: 768px) {
+   .collectionName,.productName,.productPrice{
+    font-size: calc(0.75rem + 0.5vw);
+    line-height: 14px;
+   }
+   .row{
+   
+    padding: 0.5rem 0.5rem;
+   }
+   
+}
+@media only screen and (max-width: 992px) {
+
+   
+
+    .row {
+        
+        padding: 1.5rem 1.5rem;
+    }
+}

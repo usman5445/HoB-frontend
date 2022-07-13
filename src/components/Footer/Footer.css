@@ -1,0 +1,36 @@
+.Footer_container{
+    height: 100vh;
+
+}
+.footer_heading{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.Aboutus{
+text-align: center;
+font-size: 1.2rem;
+letter-spacing: 1px;
+}
+.follow{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.contact{
+    font-size: 1.2rem;
+}
+.us{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+input::placeholder{
+    text-align: center;
+}
+.emailcont{
+    width: 40vw;
+}
+
+@media only screen and (max-width: 768px){
+    .and{
+       width: 80vw;
+    }
+}

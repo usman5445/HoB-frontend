@@ -1,0 +1,144 @@
+ @import url('http://fonts.cdnfonts.com/css/gotham');
+
+.verticalline{
+width: 5.5rem;
+height: 1.2rem;
+background: #FFDF05;
+
+}
+.quantity{
+    font-size: 3rem;
+    font-weight: 750;
+}
+#quantity{
+    margin-left: 2rem;
+
+}
+.unit{
+font-size: 1.2rem;
+font-weight: 650;
+}
+.recycledname{
+    text-align: center;
+}
+
+.marquee-container{
+    overflow-x: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 3rem;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    text-align: center;
+}
+
+
+
+.perfectdrip{
+   
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        left: 100%;
+   }
+    100% {
+        left: -100%;
+   }
+}
+  
+.tagus{
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2.5rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: white;
+    -webkit-text-stroke: 1px black; 
+}
+.hashtag{
+    font-family: 'Gotham';
+font-style: normal;
+font-weight: 800;
+font-size: 2rem;
+line-height: 28px;
+text-align: center;
+letter-spacing: 0.09em;
+text-transform: uppercase;
+color: #000000;
+}
+.shopUnboxheading{
+font-family: 'Gotham';
+font-style: normal;
+font-weight: 800;
+font-size: 3.4rem;
+line-height: 3.4rem;
+text-align: center;
+letter-spacing: 0.035em;
+text-transform: uppercase;
+}
+.shopUnboxDescription-1{
+font-family: 'Gotham';
+font-style: normal;
+font-weight: 400;
+font-size: 1.15rem;
+line-height: 129%;
+text-align: center;
+letter-spacing: 0.01em;
+}
+.magazineContainer{
+    background: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 0%,
+        rgb(0, 0, 0) 40%,
+        rgb(252, 255, 255) 40%,
+        rgb(252, 252, 252) 100%
+      );
+}
+.magazinecard{
+    position: relative;
+    top: 5%;
+    width: 18rem;
+   
+}
+
+.magazineHeading{
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2.5rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: black;
+    -webkit-text-stroke: 1px rgb(255, 255, 255); 
+}
+.and{
+  position: absolute;
+  left: 90%;
+  mix-blend-mode:normal;
+  
+}
+
+@media only screen and (max-width: 768px){
+    .and{
+        position: absolute;
+        left: 85%;
+       height: 120px !important;
+        width: 50px !important;
+    }
+}
