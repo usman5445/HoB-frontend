@@ -6,7 +6,7 @@ import axios from "axios";
     
       try {
     
-        const data = await axios.get("/products")
+        const data = await axios.get(`${process.env.BACKEND_URL}/products`)
           
         // console.log(response.data);
         return data;
