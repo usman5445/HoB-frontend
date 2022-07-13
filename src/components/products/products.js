@@ -42,11 +42,11 @@ function ProductPage() {
       </div>
       <div className="products">
         <div className="row">
-          {products.map((product) => (
+          {products?.map((product) => (
             <div className="col-6 col-sm-6 col-md-4 col-lg-3">
               <div class="card">
                 <Carousel showThumbs={false}>
-                  {product.images.map((image) => (
+                  {product?.images.map((image) => (
                     <div>
                       <img
                         src={image.src}
@@ -57,12 +57,12 @@ function ProductPage() {
                   ))}
                 </Carousel>
 
-                <div className="card-body" key={product.id}>
+                <div className="card-body" key={product?.id}>
                   <p className="card-text collectionName">Collection Name</p>
-                  <p className="card-text productName">{product.title}</p>
+                  <p className="card-text productName">{product?.title}</p>
                   <p className="card-text productPrice">
                     {"\u20B9"}
-                    {product.variants[0].price}
+                    {product?.variants[0].price}
                   </p>
                 </div>
               </div>
