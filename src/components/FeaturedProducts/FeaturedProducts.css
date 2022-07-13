@@ -1,4 +1,4 @@
- @import url('http://fonts.cdnfonts.com/css/gotham');
+
 
 .verticalline{
 width: 5.5rem;
@@ -30,7 +30,7 @@ font-weight: 650;
     overflow-x: hidden;
     background-color: black;
     color: white;
-    font-family: 'Gotham';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 1.1rem;
@@ -58,7 +58,6 @@ font-weight: 650;
 }
   
 .tagus{
-    font-family: 'Gotham';
     font-style: normal;
     font-weight: 800;
     font-size: 2rem;
@@ -70,7 +69,6 @@ font-weight: 650;
     -webkit-text-stroke: 1px black; 
 }
 .hashtag{
-    font-family: 'Gotham';
 font-style: normal;
 font-weight: 800;
 font-size: 2rem;
@@ -81,7 +79,6 @@ text-transform: uppercase;
 color: #000000;
 }
 .shopUnboxheading{
-font-family: 'Gotham';
 font-style: normal;
 font-weight: 800;
 font-size: 3.4rem;
@@ -91,7 +88,6 @@ letter-spacing: 0.035em;
 text-transform: uppercase;
 }
 .shopUnboxDescription-1{
-font-family: 'Gotham';
 font-style: normal;
 font-weight: 400;
 font-size: 1.15rem;
@@ -116,7 +112,6 @@ letter-spacing: 0.01em;
 }
 
 .magazineHeading{
-    font-family: 'Gotham';
     font-style: normal;
     font-weight: 800;
     font-size: 2rem;
