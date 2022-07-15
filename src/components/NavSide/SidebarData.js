@@ -35,4 +35,10 @@ export const SidebarData = [
     icon: "",
     cName: "nav-text",
   },
+  {
+    title: "Products Detail",
+    path: "/productDetails",
+    icon: "",
+    cName: "nav-text",
+  },
 ];

@@ -9,9 +9,10 @@ import { productRequest } from "../../api/products";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import slider from "../../assests/Slider.svg";
-
+import { useNavigate } from "react-router-dom";
 function ProductPage() {
   const [products, setproducts] = useState([]);
+  const navigate = useNavigate();
   const getproducts = async () => {
     try {
       const response = await productRequest();
@@ -22,6 +23,11 @@ function ProductPage() {
       console.log(error.message);
     }
   };
+
+  function handleProductClick(id) {
+    console.log(id);
+    id && navigate(`/productDetails/${id}`);
+  }
 
   useEffect(() => {
     getproducts();
@@ -57,7 +63,11 @@ function ProductPage() {
                   ))}
                 </Carousel>
 
-                <div className="card-body" key={product.id}>
+                <div
+                  onClick={() => handleProductClick(product.id)}
+                  className="card-body"
+                  key={product.id}
+                >
                   <p className="card-text collectionName">Collection Name</p>
                   <p className="card-text productName">{product.title}</p>
                   <p className="card-text productPrice">

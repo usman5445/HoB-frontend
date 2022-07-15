@@ -1,0 +1,161 @@
+ @import url('http://fonts.cdnfonts.com/css/gotham');
+
+.product-detailHead {
+    /* font-size: 1.3rem;
+     */
+    font-family: 'Gotham';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 1rem;
+}
+
+.productcomparePrice {
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #B1B1B1;
+    font-family: 'Gotham';
+}
+
+.productName {
+    padding: 1rem 0;
+    font-family: 'Gotham';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0px;
+}
+
+.product-card {
+    color: #B1B1B1;
+}
+
+.company-title {
+    /* display: inline-block; */
+    float: left;
+    font-family: 'Gotham';
+    margin: 0px;
+}
+
+.productPrice {
+    font-size: 20px;
+    font-family: 'Gotham';
+}
+
+.share-btn {
+    float: right;
+}
+
+.headers {
+    text-align: center;
+    font-family: 'Gotham';
+}
+
+#resultsForhead {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#collectionHead {
+    font-size: 1.3rem;
+}
+
+
+
+
+
+.row {
+    padding: 2rem 5rem;
+}
+
+.col {
+    border: none;
+    /* color: white */
+    background-color: #fff;
+}
+
+
+.collectionName {
+    color: #B4B4B4;
+}
+
+.productPrice {
+    font-weight: 700;
+}
+
+.card {
+    margin-top: 1rem;
+    border: none !important;
+}
+
+.btn:focus{
+    outline: none;
+}
+.buynow-btn{
+    font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        /* Color - Yellow */
+        padding: 0.5rem;
+            background: #FFDF05 !important;
+            border: 3px solid #000000;
+            width: 100%;
+                border-radius: 0px !important;
+}
+/* .addcart-btn: */
+.addcart-btn {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    /* Color - White */
+    padding: 0.5rem;
+    width: 100%;
+        background: #FFFFFF;
+    border: 3px solid #000000;
+
+    border-radius: 0px !important;
+}
+.shipping-disclaimertext{
+    font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        /* or 140% */
+    
+        padding: 1rem !important;
+    
+        color: #BBBBBB;
+        margin: 0px;
+        
+}
+.color-disclaimer{
+    /* padding: 0px; */
+    margin: 0px;
+    font-size: 16px;
+        line-height: 22px;
+}
+.product-quality-text{
+    margin: 0px;
+}
+
+.quality-list-item{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.size-btn{
+    width: 20%;
+    margin: 0.3rem;
+    border: 1px solid #BDBDBD !important;
+    border-radius: 0px !important;
+}
+
+.size-box{
+    padding: 1rem !important;
+}
+
+/* -- quantity box -- */
+
+
