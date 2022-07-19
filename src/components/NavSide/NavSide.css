@@ -101,3 +101,9 @@ hr{
 
 .row{        padding: 0.7rem 6rem !important; 
         }
+
+
+.nav{
+    border: none !important;
+    border-bottom: 3px solid #000000 !important;
+}        

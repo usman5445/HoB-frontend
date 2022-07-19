@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../Footer/Footer";
 import Carousel2 from "../Carousel2/Carousel2";
+import NavSide from "../NavSide/NavSide";
 import { productRequest, singleProductRequest } from "../../api/products";
 import { useEffect, useState } from "react";
 import smilelogo from "../../assests/smilelogo.svg";
@@ -48,54 +49,54 @@ export const ProductDetails = () => {
       compare_at_price: product?.variants[0].compare_at_price,
       price: product?.variants[0].price,
     });
-    bodyRef.current.innerHTML = product?.body_html;
+    // bodyRef.current.innerHTML = product?.body_html;
   }, [product]);
   useEffect(() => {
     getproducts();
   }, []);
   return (
     <div className="product-container">
+      <NavSide />
       <div className="product-detailHead text-center">
         House of Babas / T-shirts / Pop
       </div>
       <div className="products">
-        <div className="row">
-          <div className="">
-            <div class="card">
-              <Carousel showThumbs={false}>
-                {product?.images?.map((image) => (
-                  <div>
-                    <img
-                      src={image.src}
-                      className="d-block w-100 "
-                      alt={image.alt}
-                    />
-                  </div>
-                ))}
-              </Carousel>
-
-              <div className="card-body">
-                {/* {console.log(product.variants[0].price)} */}
-                {/* <p className="card-text collectionName"></p> */}
-                <p className="product-card card-text">
-                  <span className="company-title">House of Baba</span>
-                  <span className="share-btn">
-                    <img src={Sharebtn} alt="share-btn" className="share" />
-                    Share
-                  </span>
-                </p>
-                <p className=" productName">{product?.title}</p>
-                <p className=" productcomparePrice">
-                  &#8377;
-                  {price.compare_at_price}
-                </p>
-                <p className="card-text productPrice">
-                  &#8377;
-                  {price.price}
-                </p>
+        <div className="row product-card">
+          {/* <div className=""> */}
+          <Carousel showThumbs={false} className="product_image_carousel">
+            {product?.images?.map((image) => (
+              <div>
+                <img
+                  src={image.src}
+                  className="d-block w-100 "
+                  alt={image.alt}
+                />
               </div>
+            ))}
+          </Carousel>
+          <div class="card">
+            <div className="card-body">
+              {/* {console.log(product.variants[0].price)} */}
+              {/* <p className="card-text collectionName"></p> */}
+              <p className="product-card card-text">
+                <span className="company-title">House of Baba</span>
+                <span className="share-btn">
+                  <img src={Sharebtn} alt="share-btn" className="share" />
+                  Share
+                </span>
+              </p>
+              <p className=" product_Name">{product?.title}</p>
+              <p className=" productcomparePrice">
+                &#8377;
+                {price.compare_at_price}
+              </p>
+              <p className="card-text product_Price">
+                &#8377;
+                {price.price}
+              </p>
             </div>
           </div>
+          {/* </div> */}
         </div>
         <div className="row d-flex justify-content-evenly">
           <div className="col d-flex justify-content-center">
@@ -139,7 +140,7 @@ export const ProductDetails = () => {
         </div>
       </div>
       <div className="row product-quality-text">
-        {/* <p className="quality-text">
+        <p className="quality-text">
           <strong>
             Crafted in Cotton and having a funky pattern, with Pull On closure,
             this T-shirt has Half Sleeve and a Round Collar and is definitely a
@@ -180,19 +181,19 @@ export const ProductDetails = () => {
               </p>
             </li>
           </ul>
-        </p>*/}
-        <div ref={bodyRef}></div>
+        </p>
+
         <p className="color-disclaimer">
           <strong> Disclaimer:</strong> Due To The Different Monitor And Light
           Effect, The Actual Color Of The Item Might Be Slightly Different From
           The Color Showed On The Pictures.
         </p>
       </div>
-      <div className=" row shipping-disclaimertext">
+      <div className=" row shipping-disclaimertext text-center">
         Free shipping on orders above ₹5000 Delivery in 5-7 business days.
       </div>
       <Carousel2 />
-      Add to Cart
+
       <div
         className="smilelogoContainer d-flex  justify-content-center align-items-center flex-row my-4"
         style={{ overflow: "hidden" }}
@@ -206,7 +207,9 @@ export const ProductDetails = () => {
         />
         <img src={smilegreylogo} className="mx-2 my-2" alt="..." />
       </div>
+      <hr className="footer_divider"></hr>
       <Footer />
+      <hr className="footer_divider"></hr>
     </div>
   );
 };

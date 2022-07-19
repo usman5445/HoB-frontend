@@ -3,6 +3,7 @@ import "./products.css";
 import "bootstrap/dist/css/bootstrap.css";
 // import Carousel from 'react-gallery-carousel';
 import "react-gallery-carousel/dist/index.css";
+import NavSide from "../NavSide/NavSide";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { productRequest } from "../../api/products";
@@ -35,6 +36,7 @@ function ProductPage() {
 
   return (
     <div>
+      <NavSide />
       <div className="headers">
         <p id="resultsForhead">Showing Results for “T-shirts”</p>
         <p id="collectionHead">House of Babas / T-shirts</p>
@@ -47,9 +49,9 @@ function ProductPage() {
         <div id="box"></div>
       </div>
       <div className="products">
-        <div className="row">
+        <div className="row productCard">
           {products.map((product) => (
-            <div className="col-6 col-sm-6 col-md-4 col-lg-3">
+            <div className="col-6 col-sm-6 col-md-4 col-lg-3 productCard">
               <div class="card">
                 <Carousel showThumbs={false}>
                   {product.images.map((image) => (
@@ -68,7 +70,7 @@ function ProductPage() {
                   className="card-body"
                   key={product.id}
                 >
-                  <p className="card-text collectionName">Collection Name</p>
+                  <p className="card-text collectionName">T Shirts</p>
                   <p className="card-text productName">{product.title}</p>
                   <p className="card-text productPrice">
                     {"\u20B9"}

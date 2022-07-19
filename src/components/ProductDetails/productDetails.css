@@ -18,7 +18,7 @@
     font-family: 'Gotham';
 }
 
-.productName {
+.product_Name {
     padding: 1rem 0;
     font-family: 'Gotham';
     font-weight: 700;
@@ -38,7 +38,7 @@
     margin: 0px;
 }
 
-.productPrice {
+.product_Price {
     font-size: 20px;
     font-family: 'Gotham';
 }
@@ -61,10 +61,21 @@
     font-size: 1.3rem;
 }
 
+.footer_divider{
+    width: 100%;
+    height: 5px;
+    color: #000000;
+    opacity: 1;
+}
 
+.product_image_carousel{
+    padding: 0px;
+    width: 100%;
+}
 
-
-
+.product-card{
+    padding: 0px !important;
+}
 .row {
     padding: 2rem 5rem;
 }

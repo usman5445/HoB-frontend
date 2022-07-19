@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import loginBanner from "../../assests/loginBanner.svg";
 import "./login.css";
@@ -7,6 +7,8 @@ import Registration from "../registration/registration";
 import googleicon from "../../assests/icons8-google-18.svg";
 import facebookicon from "../../assests/icons8-facebook-18.svg";
 import set from "../../components/login/login";
+import { loginCust } from "../../api/customers";
+import { AlertComponent } from "../AlertComponent";
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
@@ -25,7 +27,42 @@ function MyVerticallyCenteredModal(props) {
 
 function Login() {
   const [registershow, setregisterShow] = React.useState(false);
-
+  const [emailRef, passwordRef] = [useRef(), useRef()];
+  const [alertData, setAlertData] = useState({
+    isOpen: false,
+    message: { heading: "", message: "" },
+    variant: "success",
+  });
+  const [loading, setLoading] = useState(false);
+  function handleLogin() {
+    setLoading(true);
+    const data = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+    loginCust(data)
+      .then((resp) => {
+        console.log(resp);
+        setAlertData({
+          isOpen: true,
+          message: { heading: "Login Successfully" },
+          variant: "success",
+        });
+        localStorage.setItem("customer", JSON.stringify(resp.data));
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setAlertData({
+          isOpen: true,
+          message: {
+            heading: "Please enter correct email and password",
+          },
+          variant: "danger",
+        });
+        setLoading(false);
+      });
+  }
   return (
     <div className="container-fluid ">
       <div className="row banner">
@@ -50,10 +87,16 @@ function Login() {
       <div className="row d-flex justify-content-center text-or">OR</div>
       <div className="row d-flex justify-content-center ">
         <div className="row input-group input-group-lg ">
-          <input type="email" class="form-control" placeholder="Your Email " />
+          <input
+            ref={emailRef}
+            type="email"
+            class="form-control"
+            placeholder="Your Email "
+          />
         </div>
         <div className="row  input-group input-group-lg">
           <input
+            ref={passwordRef}
             type="password"
             class="form-control"
             placeholder="Your Password"
@@ -63,9 +106,10 @@ function Login() {
       <div className="row d-flex justify-content-center text-forget-password">
         Forgot Password | Help?
       </div>
+      <AlertComponent data={alertData} setData={setAlertData} />
       <div className="row d-flex justify-content-center">
-        <button class="btn btn-login " type="button">
-          LOG IN
+        <button onClick={handleLogin} class="btn btn-login " type="button">
+          {!loading ? "LOG IN" : "Loging In..."}
         </button>
       </div>
 

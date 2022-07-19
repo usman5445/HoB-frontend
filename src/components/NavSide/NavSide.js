@@ -36,7 +36,7 @@ const NavSide = () => {
   return (
     <>
       <div className="navbar">
-        <div className="container-fluid">
+        <div className="container-fluid nav">
           <div className="navbar-brand" style={{ border: "none" }}>
             <button
               className="menuBtn"
