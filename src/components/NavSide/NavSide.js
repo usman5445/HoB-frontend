@@ -10,7 +10,8 @@ import cart from "../../assests/Empty.svg";
 import cross from "../../assests/X.svg";
 import smile from "../../assests/smilegreylogo.svg";
 import logo from "../../assests/logo.svg";
-
+import Profile from "../../assests/Profile.svg";
+import { useNavigate } from "react-router-dom";
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
@@ -30,14 +31,28 @@ function MyVerticallyCenteredModal(props) {
 const NavSide = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [sidebar, setSidebar] = useState(false);
-
+  const navigate = useNavigate();
   const showSidebar = () => setSidebar(!sidebar);
+
+  function handleGoToCart() {
+    if (!JSON.parse(localStorage.getItem("customer"))?.accessToken) {
+      setModalShow(true);
+    } else {
+      navigate("/cart");
+    }
+  }
 
   return (
     <>
-      <div className="navbar">
-        <div className="container-fluid nav">
-          <div className="navbar-brand" style={{ border: "none" }}>
+      <div className="navbar" style={{ border: "none", position: "sticky" }}>
+        <div
+          className="container-fluid"
+          style={{ border: "none", position: "sticky" }}
+        >
+          <div
+            className="navbar-brand"
+            style={{ border: "none", position: "sticky" }}
+          >
             <button
               className="menuBtn"
               onClick={showSidebar}
@@ -48,22 +63,34 @@ const NavSide = () => {
           </div>
           <form className="d-flex" role="search">
             <img className="me-3" src={Search} alt="..."></img>
-            <img className="me-3" src={cart} alt="..."></img>
+            <a onClick={handleGoToCart}>
+              <img className="me-3" src={cart} alt="..."></img>
+            </a>
             <img className="me-3" src={heart} alt="..."></img>
           </form>
         </div>
       </div>
       <nav
         className={sidebar ? "nav-menu active" : "nav-menu"}
-        style={{ zIndex: 5 }}
+        style={{ zIndex: 10 }}
       >
-        <div className="Navside Cont d-flex align-items-center justify-content-center flex-column">
-          <div className="upperCont d-flex align-items-center justify-content-center flex-row">
-            <span className="HOBLOGO">
+        <div
+          className="Navside Cont d-flex align-items-center justify-content-center flex-column "
+          style={{ width: "100%" }}
+        >
+          <div
+            className="upperCont d-flex align-items-center justify-content-center flex-row "
+            style={{ width: "100%", height: "25vh" }}
+          >
+            <span className="HOBLOGO" style={{ paddingLeft: "1rem" }}>
               <img src={logo} style={{ width: "8rem" }} alt="..." />
             </span>
-            <span className="nav-menu-items" onClick={showSidebar}>
-              <li className="navbar-toggle">
+            <span
+              className="nav-menu-items"
+              onClick={showSidebar}
+              style={{ height: "100%" }}
+            >
+              <li className="navbar-toggle" style={{ height: "100%" }}>
                 <button className="menu-bars" style={{ border: "none" }}>
                   <img src={cross} alt="..." />
                 </button>
@@ -72,10 +99,10 @@ const NavSide = () => {
           </div>
           <hr />
           <div
-            className="middleCont d-flex align-items-center justify-content-center flex-column"
-            style={{ height: "60vh" }}
+            className="middleCont d-flex align-items-center justify-content-center flex-column "
+            style={{ height: "55vh", width: "100%" }}
           >
-            <ul className="navigation-items">
+            <ul className="navigation-items" style={{ width: "100%" }}>
               {SidebarData.map((item, index) => {
                 return (
                   <li key={index} className={item.cName}>
@@ -89,9 +116,18 @@ const NavSide = () => {
             </ul>
             <hr />
           </div>
-          <div className="lastCont">
+          <div
+            className="lastCont d-flex align-items-center justify-content-center flex-row"
+            style={{ height: "8vh" }}
+          >
             <div className="MyAccount" onClick={() => setModalShow(true)}>
-              MY ACCOUNT
+              <div
+                className="Myaccountlogo d-flex align-items-center justify-content-center flex-row"
+                style={{ cursor: "pointer" }}
+              >
+                <img src={Profile}></img>
+                <div className="Myaccounttext mx-4">MY ACCOUNT</div>
+              </div>
             </div>
             <MyVerticallyCenteredModal
               show={modalShow}

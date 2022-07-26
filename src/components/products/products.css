@@ -29,11 +29,6 @@
 .row{
     padding: 2rem 5rem;
 }
-.col{
-    border: 1px solid black;
-    color: white;
-    background-color: blueviolet;
-}
 
 .collectionName{
     color: #B4B4B4;
@@ -70,4 +65,9 @@
 
 .productCard{
 padding: 3px !important;
+}
+
+.color-blue-btn{
+    border-radius: 32px;
+    display: inline-block;
 }

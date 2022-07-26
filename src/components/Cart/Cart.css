@@ -1,0 +1,65 @@
+.CartHeading {
+  font-weight: 700;
+  text-align: center;
+  font-size: 2rem;
+}
+.items {
+  text-align: center;
+}
+.CartImgCont {
+  margin: 1rem;
+}
+.CartImgCont img {
+  width: fit-content;
+  height: 147px;
+}
+.CartDetailsCont {
+  font-weight: 500;
+  line-height: 1.7rem;
+}
+.price {
+  font-weight: 800;
+  font-size: larger;
+}
+.deleteimg {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+}
+
+.quantitycard {
+  width: 5rem;
+  height: 2rem;
+  border: 1.5px solid grey;
+  position: absolute;
+  top: 70%;
+  left: 75%;
+}
+.minusbutton {
+  cursor: pointer;
+}
+hr {
+  background-color: black;
+  height: 1em;
+  border-top: 1px solid black;
+}
+.cash {
+  margin: 0%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+.totalvalue {
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+.Totalpaymentdetails {
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+.paymentfooter {
+  position: sticky;
+  bottom: 0%;
+  z-index: 5;
+  background-color: white;
+}

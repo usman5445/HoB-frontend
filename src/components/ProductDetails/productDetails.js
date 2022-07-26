@@ -10,15 +10,79 @@ import smilegreylogo from "../../assests/smilegreylogo.svg";
 import smileblacklogo from "../../assests/smileblacklogo.svg";
 import Sharebtn from "../../assests/Share Rounded.svg";
 import "../ProductDetails/productDetails.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { addToCart, newCart } from "../../api/cart";
+import { Modal } from "react-bootstrap";
+import Login from "../login/login";
+import { Loader } from "../Loader";
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton></Modal.Header>
+      <Modal.Body>
+        <Login />
+      </Modal.Body>
+    </Modal>
+  );
+}
+
 export const ProductDetails = () => {
   let [count, setCount] = useState(0);
   const [product, setProduct] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
+  const [selectedVarient, setSelectedVarient] = useState({});
   const bodyRef = useRef();
+  const navigate = useNavigate();
   const [price, setPrice] = useState({
     compare_at_price: null,
     price: null,
   });
+
+  function handleAddToCart() {
+    setIsLoading(true);
+    if (!JSON.parse(localStorage.getItem("customer"))?.accessToken) {
+      setModalShow(true);
+      return;
+    }
+    if (!JSON.parse(localStorage.getItem("cart"))?.id) {
+      const accessToken = JSON.parse(
+        localStorage.getItem("customer")
+      ).accessToken;
+      newCart(accessToken).then((resp) => {
+        localStorage.setItem("cart", JSON.stringify(resp.data.cartCreate.cart));
+        const cartId = JSON.parse(localStorage.getItem("cart")).id;
+
+        addToCart(cartId, selectedVarient?.admin_graphql_api_id, 1)
+          .then((resp) => {
+            console.log(resp.data);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            console.log(err);
+            setIsLoading(false);
+          });
+      });
+    } else {
+      const cartId = JSON.parse(localStorage.getItem("cart")).id;
+
+      addToCart(cartId, selectedVarient?.admin_graphql_api_id, 1)
+        .then((resp) => {
+          console.log(resp.data);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+        });
+    }
+  }
+
   const { id } = useParams();
   let parcer = new DOMParser();
   function incrementCount() {
@@ -49,14 +113,16 @@ export const ProductDetails = () => {
       compare_at_price: product?.variants[0].compare_at_price,
       price: product?.variants[0].price,
     });
+    setSelectedVarient(product?.variants[0]);
     // bodyRef.current.innerHTML = product?.body_html;
-  }, [product]);
+  }, [product, modalShow]);
   useEffect(() => {
     getproducts();
-  }, []);
+  }, [modalShow]);
   return (
     <div className="product-container">
       <NavSide />
+      <Loader isTrue={isLoading} />
       <div className="product-detailHead text-center">
         House of Babas / T-shirts / Pop
       </div>
@@ -100,7 +166,9 @@ export const ProductDetails = () => {
         </div>
         <div className="row d-flex justify-content-evenly">
           <div className="col d-flex justify-content-center">
-            <button className=" addcart-btn ">Add to Cart</button>
+            <button onClick={handleAddToCart} className=" addcart-btn ">
+              Add to Cart
+            </button>
           </div>
           <div className="col d-flex justify-content-center">
             <button className=" buynow-btn">Buy Now</button>
@@ -126,6 +194,7 @@ export const ProductDetails = () => {
                         compare_at_price: variant.compare_at_price,
                         price: variant.price,
                       });
+                    setSelectedVarient(variant);
                   }}
                 />
                 <label
@@ -137,6 +206,51 @@ export const ProductDetails = () => {
               </>
             );
           })}
+        </div>
+
+        <div className="row color-box">
+          <div className="color-box-heading">Colour</div>
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="black"
+            autocomplete="off"
+          />
+          <label class="color-btn btn-dark" for="black"></label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="blue"
+            autocomplete="off"
+          />
+          <label class="color-btn btn-primary" for="blue"></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="red"
+            autocomplete="off"
+          />
+          <label class="color-btn btn-danger" for="red"></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="yellow"
+            autocomplete="off"
+          />
+          <label class="color-btn btn-warning" for="yellow"></label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="grey"
+            autocomplete="off"
+          />
+          <label class="color-btn btn-secondary" for="grey"></label>
         </div>
       </div>
       <div className="row product-quality-text">
@@ -192,6 +306,20 @@ export const ProductDetails = () => {
       <div className=" row shipping-disclaimertext text-center">
         Free shipping on orders above ₹5000 Delivery in 5-7 business days.
       </div>
+
+      <div className="row ">
+        <div className=" pair-with-heading text-center">
+          YOU CAN PAIR IT WITH
+        </div>
+        <div className="row "></div>
+      </div>
+
+      <div className="row ">
+        <div className=" simlair-heading text-center">SIMILAIR PRODUCTS</div>
+        <div className="row "></div>
+      </div>
+
+      <div className="review-heading text-center">CUSTOMER REVIEWS</div>
       <Carousel2 />
 
       <div
@@ -210,6 +338,10 @@ export const ProductDetails = () => {
       <hr className="footer_divider"></hr>
       <Footer />
       <hr className="footer_divider"></hr>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </div>
   );
 };

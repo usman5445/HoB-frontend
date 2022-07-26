@@ -49,9 +49,12 @@ function ProductPage() {
         <div id="box"></div>
       </div>
       <div className="products">
-        <div className="row productCard">
+        <div className="row productCard ">
           {products.map((product) => (
-            <div className="col-6 col-sm-6 col-md-4 col-lg-3 productCard">
+            <div
+              className="col-6 col-sm-6 col-md-4 col-lg-3 productCard "
+              onClick={() => handleProductClick(product.id)}
+            >
               <div class="card">
                 <Carousel showThumbs={false}>
                   {product.images.map((image) => (
@@ -66,7 +69,7 @@ function ProductPage() {
                 </Carousel>
 
                 <div
-                  onClick={() => handleProductClick(product.id)}
+                  //
                   className="card-body"
                   key={product.id}
                 >

@@ -1,4 +1,4 @@
- @import url('http://fonts.cdnfonts.com/css/gotham');
+ @import url('http://fonts.cdnfonts.com/css/poppins');
 
 .product-detailHead {
     /* font-size: 1.3rem;
@@ -8,6 +8,7 @@
     font-size: 14px;
     line-height: 20px;
     padding-top: 1rem;
+        color: #000000;
 }
 
 .productcomparePrice {
@@ -24,6 +25,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
+        color: #000000;
     margin: 0px;
 }
 
@@ -35,12 +37,14 @@
     /* display: inline-block; */
     float: left;
     font-family: 'Gotham';
+        color: #000000;
     margin: 0px;
 }
 
 .product_Price {
     font-size: 20px;
     font-family: 'Gotham';
+        color: #000000;
 }
 
 .share-btn {
@@ -170,3 +174,39 @@
 /* -- quantity box -- */
 
 
+.review-heading{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 28px;
+        padding: 1rem 0rem;
+}
+
+.color-btn {
+    border-radius:15px;
+    display: inline-block;
+    height: 28px;
+    width: 21.5px;
+    border: 2px solid #000000;
+    margin: 0.5rem;
+}
+
+.color-box-heading{
+    font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+    
+    
+        color: #B1B1B1;
+}
+
+.pair-with-heading, .simlair-heading{
+    font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 28px;
+        padding: 1rem 0rem;
+}

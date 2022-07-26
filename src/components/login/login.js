@@ -9,6 +9,7 @@ import facebookicon from "../../assests/icons8-facebook-18.svg";
 import set from "../../components/login/login";
 import { loginCust } from "../../api/customers";
 import { AlertComponent } from "../AlertComponent";
+import { newCart } from "../../api/cart";
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
@@ -49,7 +50,13 @@ function Login() {
           variant: "success",
         });
         localStorage.setItem("customer", JSON.stringify(resp.data));
-        setLoading(false);
+        newCart(resp.data.accessToken).then((resp) => {
+          localStorage.setItem(
+            "cart",
+            JSON.stringify(resp.data.cartCreate.cart)
+          );
+          setLoading(false);
+        });
       })
       .catch((err) => {
         console.log(err);
