@@ -1,212 +1,242 @@
  @import url('http://fonts.cdnfonts.com/css/poppins');
 
-.product-detailHead {
-    /* font-size: 1.3rem;
+ .product-detailHead {
+     /* font-size: 1.3rem;
      */
-    font-family: 'Gotham';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    padding-top: 1rem;
-        color: #000000;
-}
+     font-family: 'Gotham';
+     font-weight: 400;
+     font-size: 14px;
+     line-height: 20px;
+     padding-top: 1rem;
+     color: #000000;
+ }
 
-.productcomparePrice {
-    font-weight: 700;
-    font-size: 20px;
-    text-decoration: line-through;
-    color: #B1B1B1;
-    font-family: 'Gotham';
-}
+ .productcomparePrice {
+     font-weight: 700;
+     font-size: 20px;
+     text-decoration: line-through;
+     color: #B1B1B1;
+     font-family: 'Gotham';
+ }
 
-.product_Name {
-    padding: 1rem 0;
-    font-family: 'Gotham';
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 28px;
-        color: #000000;
-    margin: 0px;
-}
+ .product_Name {
+     padding: 1rem 0;
+     font-family: 'Gotham';
+     font-weight: 700;
+     font-size: 24px;
+     line-height: 28px;
+     color: #000000;
+     margin: 0px;
+ }
 
-.product-card {
-    color: #B1B1B1;
-}
+ .product-card {
+     color: #B1B1B1;
+ }
 
-.company-title {
-    /* display: inline-block; */
-    float: left;
-    font-family: 'Gotham';
-        color: #000000;
-    margin: 0px;
-}
+ .company-title {
+     /* display: inline-block; */
+     float: left;
+     font-family: 'Gotham';
+     color: #000000;
+     margin: 0px;
+ }
 
-.product_Price {
-    font-size: 20px;
-    font-family: 'Gotham';
-        color: #000000;
-}
+ .product_Price {
+     font-size: 20px;
+     font-family: 'Gotham';
+     color: #000000;
+ }
 
-.share-btn {
-    float: right;
-}
+ .share-btn {
+     float: right;
+ }
 
-.headers {
-    text-align: center;
-    font-family: 'Gotham';
-}
+ .headers {
+     text-align: center;
+     font-family: 'Gotham';
+ }
 
-#resultsForhead {
-    font-size: 2em;
-    font-weight: bold;
-}
+ #resultsForhead {
+     font-size: 2em;
+     font-weight: bold;
+ }
 
-#collectionHead {
-    font-size: 1.3rem;
-}
+ #collectionHead {
+     font-size: 1.3rem;
+ }
 
-.footer_divider{
-    width: 100%;
-    height: 5px;
-    color: #000000;
-    opacity: 1;
-}
+ .footer_divider {
+     width: 100%;
+     height: 5px;
+     color: #000000;
+     opacity: 1;
+ }
 
-.product_image_carousel{
-    padding: 0px;
-    width: 100%;
-}
+ .product_image_carousel {
+     padding: 0px;
+     width: 100%;
+ }
 
-.product-card{
-    padding: 0px !important;
-}
-.row {
-    padding: 2rem 5rem;
-}
+ .product-card {
+     padding: 0px !important;
+ }
 
-.col {
-    border: none;
-    /* color: white */
-    background-color: #fff;
-}
+ .row {
+     padding: 2rem 5rem;
+ }
 
-
-.collectionName {
-    color: #B4B4B4;
-}
-
-.productPrice {
-    font-weight: 700;
-}
-
-.card {
-    margin-top: 1rem;
-    border: none !important;
-}
-
-.btn:focus{
-    outline: none;
-}
-.buynow-btn{
-    font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        color: #000000;
-        /* Color - Yellow */
-        padding: 0.5rem;
-            background: #FFDF05 !important;
-            border: 3px solid #000000;
-            width: 100%;
-                border-radius: 0px !important;
-}
-/* .addcart-btn: */
-.addcart-btn {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    color: #000000;
-    /* Color - White */
-    padding: 0.5rem;
-    width: 100%;
-        background: #FFFFFF;
-    border: 3px solid #000000;
-
-    border-radius: 0px !important;
-}
-.shipping-disclaimertext{
-    font-weight: 400;
-        font-size: 18px;
-        line-height: 25px;
-        /* or 140% */
-    
-        padding: 1rem !important;
-    
-        color: #BBBBBB;
-        margin: 0px;
-        
-}
-.color-disclaimer{
-    /* padding: 0px; */
-    margin: 0px;
-    font-size: 16px;
-        line-height: 22px;
-}
-.product-quality-text{
-    margin: 0px;
-}
-
-.quality-list-item{
-    padding: 0px !important;
-    margin: 0px !important;
-}
-
-.size-btn{
-    width: 20%;
-    margin: 0.3rem;
-    border: 1px solid #BDBDBD !important;
-    border-radius: 0px !important;
-}
-
-.size-box{
-    padding: 1rem !important;
-}
-
-/* -- quantity box -- */
+ .col {
+     border: none;
+     /* color: white */
+     background-color: #fff;
+ }
 
 
-.review-heading{
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 28px;
-        padding: 1rem 0rem;
-}
+ .collectionName {
+     color: #B4B4B4;
+ }
 
-.color-btn {
-    border-radius:15px;
+ .productPrice {
+     font-weight: 700;
+ }
+
+ .card {
+     margin-top: 1rem;
+     border: none !important;
+ }
+
+ .btn:focus {
+     outline: none;
+ }
+
+ .buynow-btn {
+     font-weight: 500;
+     font-size: 20px;
+     line-height: 24px;
+     color: #000000;
+     /* Color - Yellow */
+     padding: 0.5rem;
+     background: #FFDF05 !important;
+     border: 3px solid #000000;
+     width: 100%;
+     border-radius: 0px !important;
+ }
+
+ /* .addcart-btn: */
+ .addcart-btn {
+     font-weight: 500;
+     font-size: 20px;
+     line-height: 24px;
+     color: #000000;
+     /* Color - White */
+     padding: 0.5rem;
+     width: 100%;
+     background: #FFFFFF;
+     border: 3px solid #000000;
+
+     border-radius: 0px !important;
+ }
+
+ .shipping-disclaimertext {
+     font-weight: 400;
+     font-size: 18px;
+     line-height: 25px;
+     /* or 140% */
+
+     padding: 1rem !important;
+
+     color: #BBBBBB;
+     margin: 0px;
+
+ }
+
+ .color-disclaimer {
+     /* padding: 0px; */
+     margin: 0px;
+     font-size: 16px;
+     line-height: 22px;
+ }
+
+ .product-quality-text {
+     margin: 0px;
+ }
+
+ .quality-list-item {
+     padding: 0px !important;
+     margin: 0px !important;
+ }
+
+ .size-btn {
+     width: 20%;
+     margin: 0.3rem;
+     border: 1px solid #BDBDBD !important;
+     border-radius: 0px !important;
+ }
+
+ .size-box {
+     padding: 1rem !important;
+ }
+
+ /* -- quantity box -- */
+
+
+ .review-heading {
+     font-family: 'Poppins';
+     font-style: normal;
+     font-weight: 800;
+     font-size: 32px;
+     line-height: 28px;
+     padding: 1rem 0rem;
+ }
+
+ .color-btn {
+     border-radius: 15px;
+     display: inline-block;
+     height: 28px;
+     width: 21.5px;
+     border: 2px solid #000000;
+     margin: 0.5rem;
+ }
+
+ .color-box-heading,.quantity-box-heading {
+     font-style: normal;
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 22px;
+
+
+     color: #B1B1B1;
+ }
+
+ .pair-with-heading,
+ .simlair-heading {
+     font-family: 'Poppins';
+     font-style: normal;
+     font-weight: 800;
+     font-size: 32px;
+     line-height: 28px;
+     padding: 1rem 0rem;
+ }
+
+ .quantity-increment-btn, .quantity-decrement-btn {
+     display: inline-block;
+     width: 25%;
+     height: 100%;
+     /* padding-bottom: 0.25rem; */
+     border: none ;
+     background-color: #FFFFFF;
+ }
+ .quantity-input-box{
     display: inline-block;
-    height: 28px;
-    width: 21.5px;
-    border: 2px solid #000000;
-    margin: 0.5rem;
-}
+    width: 50%;
+    height: 100%;
+    /* padding-bottom: 0.25rem; */
+    border: none ;
+ }
 
-.color-box-heading{
-    font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-    
-    
-        color: #B1B1B1;
-}
-
-.pair-with-heading, .simlair-heading{
-    font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 28px;
-        padding: 1rem 0rem;
-}
+ .quantity-box{
+width: 45%;
+ border: 1px solid #BDBDBD;
+ margin-left: 0.75rem;
+ }
+ 

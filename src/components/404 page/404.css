@@ -1,0 +1,71 @@
+.home-btn {
+    background: #FFDF05;
+    /* Color - Text Primary */
+    padding: 10px;
+    border: 3px solid #000000;
+    color: #000000 !important;
+    text-decoration: none;
+    width: 70% !important;
+
+}
+
+.home-btn-container {
+    padding-left: 1.2rem !important;
+}
+
+.home-btn-text {
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    /* identical to box height, or 117% */
+    font-family: 'Poppins';
+    letter-spacing: 0.04em;
+
+}
+
+.main-heading {
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 41px;
+    /* or 103% */
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #000000;
+    padding-right: 4rem;
+    padding: 1.2rem;
+}
+
+.error-text {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+    padding: 1.2rem;
+    padding-bottom: 0.5rem;
+    /* Color - Text Primary */
+
+    color: #000000;
+}
+
+.pro-tip-heading {
+    padding: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: 'Poppins';
+    color: #000000;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+.pro-tip-container{
+    margin-right: 8rem !important;
+}

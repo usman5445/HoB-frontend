@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import Carousel2 from "../Carousel2/Carousel2";
 import NavSide from "../NavSide/NavSide";
 import { productRequest, singleProductRequest } from "../../api/products";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Share } from "react";
 import smilelogo from "../../assests/smilelogo.svg";
 import smilegreylogo from "../../assests/smilegreylogo.svg";
 import smileblacklogo from "../../assests/smileblacklogo.svg";
@@ -32,6 +32,16 @@ function MyVerticallyCenteredModal(props) {
 }
 
 export const ProductDetails = () => {
+  const shareData = async () => {
+    try {
+      await Share.share({
+        message: "This is the demo text",
+      });
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   let [count, setCount] = useState(0);
   const [product, setProduct] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -90,8 +100,10 @@ export const ProductDetails = () => {
     setCount(count);
   }
   function decrementCount() {
-    count = count - 1;
-    setCount(count);
+    if (count > 1) {
+      count = count - 1;
+      setCount(count);
+    }
   }
   const getproducts = async () => {
     console.log(id);
@@ -146,7 +158,7 @@ export const ProductDetails = () => {
               {/* <p className="card-text collectionName"></p> */}
               <p className="product-card card-text">
                 <span className="company-title">House of Baba</span>
-                <span className="share-btn">
+                <span className="share-btn" onPress={shareData} title="Share">
                   <img src={Sharebtn} alt="share-btn" className="share" />
                   Share
                 </span>
@@ -251,6 +263,32 @@ export const ProductDetails = () => {
             autocomplete="off"
           />
           <label class="color-btn btn-secondary" for="grey"></label>
+        </div>
+
+        <div className="row ">
+          <div className="quantity-box-heading">Quantity</div>
+
+          <div className="row quantity-box">
+            <button
+              className="quantity-decrement-btn"
+              onClick={() => decrementCount()}
+            >
+              -
+            </button>
+            <input
+              type="number"
+              className="quantity-input-box"
+              name="quantity-value"
+              placeholder={count}
+              min="1"
+            ></input>
+            <button
+              className="quantity-increment-btn"
+              onClick={() => incrementCount()}
+            >
+              +
+            </button>
+          </div>
         </div>
       </div>
       <div className="row product-quality-text">

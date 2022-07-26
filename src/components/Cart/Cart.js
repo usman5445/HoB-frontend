@@ -25,10 +25,12 @@ import {
   updateQuantity,
 } from "../../api/cart";
 import { Loader } from "../Loader";
+import { productRequest } from "../../api/products";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [cartData, setCartData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [feturedProducts, setFeturedProducts] = useState([]);
   function fetchCartItems() {
     setIsLoading(true);
     const cartId = JSON.parse(localStorage.getItem("cart"))?.id;
@@ -100,6 +102,11 @@ const Cart = () => {
     }
 
     fetchCartItems();
+
+    productRequest().then((resp) => {
+      console.log(resp.data);
+      setFeturedProducts(resp.data.products);
+    });
   }, []);
   return (
     <>
@@ -281,32 +288,39 @@ const Cart = () => {
           <div className="CartHeading">YOU MAY ALSO LIKE</div>
           <div
             className="products  d-flex justify-content-between"
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "fit-content" }}
           >
             <div
               className="row d-flex justify-content-evenly"
-              style={{ width: "100%" }}
+              style={{ width: "100%", height: "fit-content" }}
             >
-              <div className="col-6 col-sm-6 col-md-4 col-lg-2 ">
-                <div className="card" style={{ height: "15rem" }}>
-                  <img src={blacktshirt} className="" alt="..."></img>
-                  <div className="card-body">
-                    <p className="card-text collectionName">Collection Name</p>
-                    <p className="card-text productName">Product Name</p>
-                    <p className="card-text productPrice">Price</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-6 col-sm-6 col-md-4 col-lg-2">
-                <div className="card">
-                  <img src={blacktshirt} className="" alt={"product"}></img>
-                  <div className="card-body">
-                    <p className="card-text collectionName">Collection Name</p>
-                    <p className="card-text productName">Product Name</p>
-                    <p className="card-text productPrice">Price</p>
-                  </div>
-                </div>
-              </div>
+              {feturedProducts.length &&
+                feturedProducts
+                  .splice(Math.floor(Math.random() * feturedProducts.length), 2)
+                  .map((product) => {
+                    return (
+                      <div className="col-6 col-sm-6 col-md-4 col-lg-2 ">
+                        <div className="card" style={{ height: "15rem" }}>
+                          <img
+                            src={product.image.src}
+                            className=""
+                            alt="..."
+                          ></img>
+                          <div className="card-body">
+                            <p className="card-text collectionName">
+                              Collection Name
+                            </p>
+                            <p className="card-text productName">
+                              {product.title}
+                            </p>
+                            <p className="card-text productPrice">
+                              Rs. {product.variants[0].price}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
             </div>
           </div>
         </div>
@@ -314,32 +328,30 @@ const Cart = () => {
           <div className="CartHeading">RECENTLY VIEWED</div>
           <div
             className="products  d-flex justify-content-between"
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "fit-content" }}
           >
             <div
-              className="row d-flex justify-content-evenly"
-              style={{ width: "100%" }}
+              className="row d-flex  "
+              style={{ width: "100%", height: "fit-content" }}
             >
-              <div className="col-6 col-sm-6 col-md-4 col-lg-2 ">
-                <div className="card" style={{ height: "15rem" }}>
-                  <img src={blacktshirt} className="" alt="..."></img>
-                  <div className="card-body">
-                    <p className="card-text collectionName">Collection Name</p>
-                    <p className="card-text productName">Product Name</p>
-                    <p className="card-text productPrice">Price</p>
+              {feturedProducts.slice(0, 2).map((product) => {
+                return (
+                  <div className="col-6 col-sm-6 col-md-4 col-lg-2 ">
+                    <div className="card" style={{ height: "15rem" }}>
+                      <img src={product.image.src} className="" alt="..."></img>
+                      <div className="card-body">
+                        <p className="card-text collectionName">
+                          Collection Name
+                        </p>
+                        <p className="card-text productName">{product.title}</p>
+                        <p className="card-text productPrice">
+                          Rs. {product.variants[0].price}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="col-6 col-sm-6 col-md-4 col-lg-2">
-                <div className="card">
-                  <img src={blacktshirt} className="" alt={"product"}></img>
-                  <div className="card-body">
-                    <p className="card-text collectionName">Collection Name</p>
-                    <p className="card-text productName">Product Name</p>
-                    <p className="card-text productPrice">Price</p>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
