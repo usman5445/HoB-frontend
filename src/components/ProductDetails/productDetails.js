@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import Carousel2 from "../Carousel2/Carousel2";
 import NavSide from "../NavSide/NavSide";
 import { productRequest, singleProductRequest } from "../../api/products";
-import { useEffect, useState, Share } from "react";
+import { useEffect, useState } from "react";
 import smilelogo from "../../assests/smilelogo.svg";
 import smilegreylogo from "../../assests/smilegreylogo.svg";
 import smileblacklogo from "../../assests/smileblacklogo.svg";
