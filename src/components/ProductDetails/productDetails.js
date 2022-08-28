@@ -32,16 +32,6 @@ function MyVerticallyCenteredModal(props) {
 }
 
 export const ProductDetails = () => {
-  const shareData = async () => {
-    try {
-      await Share.share({
-        message: "This is the demo text",
-      });
-    } catch (error) {
-      alert(error.message);
-    }
-  };
-
   let [count, setCount] = useState(0);
   const [product, setProduct] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -158,7 +148,7 @@ export const ProductDetails = () => {
               {/* <p className="card-text collectionName"></p> */}
               <p className="product-card card-text">
                 <span className="company-title">House of Baba</span>
-                <span className="share-btn" onPress={shareData} title="Share">
+                <span className="share-btn" title="Share">
                   <img src={Sharebtn} alt="share-btn" className="share" />
                   Share
                 </span>
