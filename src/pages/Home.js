@@ -10,11 +10,6 @@ const Home = () => {
     <>
       <NavSide />
       <Carousel />
-      <div>
-        <p>Click to route to "/oops" which isn't a registered route:</p>
-        <Link to="/oops">Let's go</Link>
-      </div>
-
       <FeaturedProducts />
       <Footer />
     </>
